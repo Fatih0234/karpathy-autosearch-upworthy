@@ -26,3 +26,14 @@ Improve pairwise headline winner prediction accuracy by editing `strategy.md` an
 - Psychology of curiosity, loss aversion, social proof
 - Formatting patterns (numbers, questions, dashes, colons)
 - Topic-specific signals (political vs. lifestyle vs. science)
+
+## Model Config
+MODEL_PROVIDER=gemini, GEMINI_MODEL=gemini-2.5-flash-lite (set in .env or shell)
+
+## CLI
+python -m upworthy_autosearch.search --key-change "..." --rationale "..."
+
+## Result Files (auto-managed)
+- results/experiment_log.md — narrative log of every iteration
+- results/leaderboard.md — best runs table, regenerated on improvement
+- results/iteration.txt — monotonic counter

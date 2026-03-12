@@ -3,12 +3,15 @@
 ## Editable Files (agent may modify)
 - `strategy.md` — prediction strategy, hypotheses, scoring rules
 - `prompt_templates/pairwise_judge.md` — LLM judge prompt
+- `results/experiment_log.md` — narrative log (append-only, managed by search.py)
+- `results/leaderboard.md` — auto-generated leaderboard (managed by search.py)
 
 ## Forbidden Files (agent must NEVER edit)
 - `src/upworthy_autosearch/benchmark.py` — fixed evaluator
 - `src/upworthy_autosearch/prepare_dataset.py` — fixed data pipeline
 - `src/upworthy_autosearch/data.py` — fixed downloader
 - `results/results.tsv` — append only (search.py handles this)
+- `results/iteration.txt` — monotonic counter (search.py handles this)
 - Any file in `data/` directory
 
 ## Logging Rules
