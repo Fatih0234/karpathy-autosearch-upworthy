@@ -1,0 +1,56 @@
+name: Daily Benchmark
+
+on:
+  schedule:
+    - cron: "0 6 * * *"
+  workflow_dispatch:
+
+jobs:
+  benchmark:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install uv
+        run: pip install uv
+
+      - name: Install dependencies
+        run: uv sync
+
+      - name: Download data
+        run: uv run python -m upworthy_autosearch.data
+
+      - name: Prepare dataset
+        run: uv run python -m upworthy_autosearch.prepare_dataset
+
+      - name: Run benchmark (dev)
+        env:
+          MODEL_PROVIDER: ${{ secrets.MODEL_PROVIDER || 'heuristic' }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+        run: uv run python -m upworthy_autosearch.benchmark dev
+
+      - name: Run benchmark (test)
+        env:
+          MODEL_PROVIDER: ${{ secrets.MODEL_PROVIDER || 'heuristic' }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+        run: uv run python -m upworthy_autosearch.benchmark test
+
+      - name: Upload results artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: benchmark-results-${{ github.run_id }}
+          path: results/results.tsv
+
+      - name: Summary
+        run: |
+          echo "## Benchmark Results" >> $GITHUB_STEP_SUMMARY
+          echo '```' >> $GITHUB_STEP_SUMMARY
+          cat results/results.tsv >> $GITHUB_STEP_SUMMARY
+          echo '```' >> $GITHUB_STEP_SUMMARY

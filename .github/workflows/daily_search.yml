@@ -1,0 +1,58 @@
+name: Daily Search
+
+on:
+  schedule:
+    - cron: "0 8 * * 1,3,5"
+  workflow_dispatch:
+
+jobs:
+  search:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Check for required secrets
+        id: check_secrets
+        run: |
+          if [ -z "${{ secrets.MODEL_PROVIDER }}" ] && [ -z "${{ secrets.OPENAI_API_KEY }}" ] && [ -z "${{ secrets.GOOGLE_API_KEY }}" ]; then
+            echo "No API secrets configured. Running heuristic mode only."
+            echo "mode=heuristic" >> $GITHUB_OUTPUT
+          else
+            echo "mode=api" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install uv
+        run: pip install uv
+
+      - name: Install dependencies
+        run: uv sync
+
+      - name: Download data
+        run: uv run python -m upworthy_autosearch.data
+
+      - name: Prepare dataset
+        run: uv run python -m upworthy_autosearch.prepare_dataset
+
+      - name: Configure git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Run search iteration
+        env:
+          MODEL_PROVIDER: ${{ secrets.MODEL_PROVIDER || 'heuristic' }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          OPENAI_BASE_URL: ${{ secrets.OPENAI_BASE_URL }}
+        run: uv run python -m upworthy_autosearch.search
+
+      - name: Push improved results
+        run: |
+          git push origin HEAD || echo "Nothing to push"
