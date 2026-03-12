@@ -10,8 +10,8 @@ from tqdm import tqdm
 RAW_DIR = Path(__file__).parents[2] / "data" / "raw"
 
 DATASETS = {
-    "exploratory": "https://osf.io/download/3n2td/",
-    "confirmatory": "https://osf.io/download/yfrtq/",
+    "exploratory": "https://osf.io/download/3vqmp/",
+    "confirmatory": "https://osf.io/download/vy8mj/",
 }
 
 
