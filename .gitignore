@@ -34,3 +34,4 @@ data/processed/*.parquet
 .pytest_cache/
 .coverage
 htmlcov/
+.env
