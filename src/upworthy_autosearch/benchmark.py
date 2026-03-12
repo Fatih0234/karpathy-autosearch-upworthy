@@ -8,6 +8,7 @@ from __future__ import annotations
 
 import csv
 import hashlib
+import os
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
@@ -31,6 +32,9 @@ COLUMNS = [
     "n_pairs",
     "strategy_hash",
     "notes",
+    "provider",
+    "iteration",
+    "key_change",
 ]
 
 
@@ -41,7 +45,7 @@ def _ensure_results_tsv() -> None:
             writer.writerow(COLUMNS)
 
 
-def evaluate(split: str = "dev", notes: str = "") -> dict:
+def evaluate(split: str = "dev", notes: str = "", iteration: int = 0, key_change: str = "") -> dict:
     """Run predictor on *split*, compute metrics, append to results.tsv."""
     parquet = PROCESSED_DIR / f"{split}.parquet"
     if not parquet.exists():
@@ -74,10 +78,12 @@ def evaluate(split: str = "dev", notes: str = "") -> dict:
         probs.append(np.clip(p1, 1e-7, 1 - 1e-7))
 
     acc = accuracy_score(labels, preds)
-    ll = log_loss(labels, probs)
+    ll = log_loss(labels, probs, labels=[0, 1])
     n = len(labels)
     shash = strategy_hash()
     ts = datetime.now(timezone.utc).isoformat()
+
+    provider = os.environ.get("MODEL_PROVIDER", "heuristic")
 
     result = {
         "timestamp": ts,
@@ -87,6 +93,9 @@ def evaluate(split: str = "dev", notes: str = "") -> dict:
         "n_pairs": n,
         "strategy_hash": shash,
         "notes": notes,
+        "provider": provider,
+        "iteration": iteration,
+        "key_change": key_change,
     }
 
     _ensure_results_tsv()
@@ -110,6 +119,17 @@ def best_dev_accuracy() -> float:
     if dev.empty:
         return 0.0
     return float(dev["accuracy"].max())
+
+
+def best_dev_log_loss() -> float:
+    """Return best (lowest) log_loss on dev split from results.tsv (inf if empty)."""
+    if not RESULTS_TSV.exists():
+        return float("inf")
+    df = pd.read_csv(RESULTS_TSV, sep="\t")
+    dev = df[df["split"] == "dev"]
+    if dev.empty:
+        return float("inf")
+    return float(dev["log_loss"].min())
 
 
 if __name__ == "__main__":
