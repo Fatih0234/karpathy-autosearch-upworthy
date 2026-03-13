@@ -70,7 +70,8 @@ Set `MODEL_PROVIDER` env var:
 The main experiment in this repo is a clean Claude Code outer-loop run with Gemini as the pairwise evaluator.
 
 - Outer agent: Claude Code
-- Evaluator: `gemini-2.5-flash-lite`
+- Evaluator used in the merged campaign: `gemini-3.1-flash-lite-preview` (via `GEMINI_MODEL`)
+- Fallback evaluator if `GEMINI_MODEL` is unset: `gemini-2.5-flash-lite`
 - Comparable reporting cohort: `provider=gemini`, `n_pairs=100`
 - Comparable dev runs in the merged history: `100`
 - Total dev rows in the merged history: `103`
