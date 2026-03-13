@@ -1,0 +1,101 @@
+sequence,timestamp,split,accuracy,log_loss,n_pairs,strategy_hash,notes,provider,iteration,key_change,is_improvement,running_best_accuracy
+1,2026-03-13T00:39:54.663003+00:00,dev,0.51,0.827126,100,adf3f7598d7b9c12,autosearch/20260313T003945_adf3f759,gemini,1,enrich judge prompt with explicit scoring signals and tie-breaking rules from strategy.md,True,0.51
+2,2026-03-13T00:41:30.507789+00:00,dev,0.53,0.799842,100,adf3f7598d7b9c12,autosearch/20260313T004120_adf3f759,gemini,2,add chain-of-thought analysis step + confidence calibration guidance,True,0.53
+3,2026-03-13T00:42:18.149311+00:00,dev,0.54,0.739083,100,adf3f7598d7b9c12,autosearch/20260313T004208_adf3f759,gemini,3,add personal-relevance and surprise/reversal signals (Upworthy-specific),True,0.54
+4,2026-03-13T02:17:41.479369+00:00,dev,0.53,0.827558,100,adf3f7598d7b9c12,autosearch/20260313T021713_adf3f759,gemini,2,Add loss aversion signal to judge prompt,False,0.54
+5,2026-03-13T02:18:41.575692+00:00,dev,0.54,0.821146,100,adf3f7598d7b9c12,autosearch/20260313T021812_adf3f759,gemini,3,Add Upworthy site context to prompt,False,0.54
+6,2026-03-13T02:19:39.711143+00:00,dev,0.57,0.74295,100,adf3f7598d7b9c12,autosearch/20260313T021910_adf3f759,gemini,4,Strengthen curiosity gap signal — Upworthy's defining feature,True,0.57
+7,2026-03-13T02:20:29.577885+00:00,dev,0.52,0.850886,100,adf3f7598d7b9c12,autosearch/20260313T022000_adf3f759,gemini,5,Add social proof / virality signal,False,0.57
+8,2026-03-13T02:21:28.324170+00:00,dev,0.57,0.761984,100,adf3f7598d7b9c12,autosearch/20260313T022058_adf3f759,gemini,6,Add transformation/inspiration signal,False,0.57
+9,2026-03-13T02:22:11.943540+00:00,dev,0.6,0.723067,100,adf3f7598d7b9c12,autosearch/20260313T022141_adf3f759,gemini,7,Change to holistic psychological impact analysis,True,0.6
+10,2026-03-13T02:22:58.894054+00:00,dev,0.54,0.776759,100,adf3f7598d7b9c12,autosearch/20260313T022226_adf3f759,gemini,8,Add reader perspective framing (Facebook 2013 scroller),False,0.6
+11,2026-03-13T02:23:56.204065+00:00,dev,0.54,0.82572,100,adf3f7598d7b9c12,autosearch/20260313T022325_adf3f759,gemini,9,"Simplify to top 5 signals, remove loss aversion/length/question",False,0.6
+12,2026-03-13T02:24:54.413257+00:00,dev,0.53,0.808523,100,adf3f7598d7b9c12,autosearch/20260313T022424_adf3f759,gemini,10,A/B test framing with stopping power concept,False,0.6
+13,2026-03-13T02:25:42.220550+00:00,dev,0.51,0.957605,100,adf3f7598d7b9c12,autosearch/20260313T022516_adf3f759,gemini,11,Explicit 1-5 scored comparison on top 3 dimensions,False,0.6
+14,2026-03-13T02:27:05.915685+00:00,dev,0.56,0.780901,100,adf3f7598d7b9c12,autosearch/20260313T022634_adf3f759,gemini,12,Reorder: personal relevance #2 before emotional resonance,False,0.6
+15,2026-03-13T02:27:56.149459+00:00,dev,0.57,0.770499,100,adf3f7598d7b9c12,autosearch/20260313T022726_adf3f759,gemini,13,Instruct model to use article excerpts for context,False,0.6
+16,2026-03-13T02:29:03.255843+00:00,dev,0.57,0.795911,100,adf3f7598d7b9c12,autosearch/20260313T022829_adf3f759,gemini,14,Add information gap theory as core principle,False,0.6
+17,2026-03-13T02:30:05.125649+00:00,dev,0.5,1.230677,100,adf3f7598d7b9c12,autosearch/20260313T022936_adf3f759,gemini,15,Minimal prompt — let Gemini use its own judgment,False,0.6
+18,2026-03-13T02:31:08.163321+00:00,dev,0.53,0.815506,100,adf3f7598d7b9c12,autosearch/20260313T023037_adf3f759,gemini,16,Steelman both headlines before deciding,False,0.6
+19,2026-03-13T02:32:12.906911+00:00,dev,0.56,0.665764,100,adf3f7598d7b9c12,autosearch/20260313T023141_adf3f759,gemini,17,Add demonstrative anchor signal (This [person/video]...),False,0.6
+20,2026-03-13T02:33:10.080350+00:00,dev,0.56,0.797705,100,adf3f7598d7b9c12,autosearch/20260313T023239_adf3f759,gemini,18,Role change to A/B testing data scientist,False,0.6
+21,2026-03-13T02:34:07.430359+00:00,dev,0.57,0.747098,100,adf3f7598d7b9c12,autosearch/20260313T023335_adf3f759,gemini,19,Add specificity tie-breaker for evenly matched headlines,False,0.6
+22,2026-03-13T02:35:13.947282+00:00,dev,0.57,0.710368,100,adf3f7598d7b9c12,autosearch/20260313T023440_adf3f759,gemini,20,Frame as implicit question comparison,False,0.6
+23,2026-03-13T02:36:03.940585+00:00,dev,0.57,0.722564,100,adf3f7598d7b9c12,autosearch/20260313T023532_adf3f759,gemini,21,Focus on opening hook strength,False,0.6
+24,2026-03-13T02:37:00.258513+00:00,dev,0.55,0.701875,100,adf3f7598d7b9c12,autosearch/20260313T023627_adf3f759,gemini,22,Move headlines before excerpts in prompt layout,False,0.6
+25,2026-03-13T02:37:51.467786+00:00,dev,0.53,0.864281,100,adf3f7598d7b9c12,autosearch/20260313T023720_adf3f759,gemini,23,Expand curiosity gap triggers with more Upworthy phrases,False,0.6
+26,2026-03-13T02:38:45.000645+00:00,dev,0.53,0.825059,100,adf3f7598d7b9c12,autosearch/20260313T023816_adf3f759,gemini,24,Focus on differences between same-article headlines,False,0.6
+27,2026-03-13T02:39:49.214733+00:00,dev,0.5,0.86911,100,adf3f7598d7b9c12,autosearch/20260313T023913_adf3f759,gemini,25,Increase analysis depth to 3-5 sentences,False,0.6
+28,2026-03-13T02:40:34.683315+00:00,dev,0.57,0.808319,100,adf3f7598d7b9c12,autosearch/20260313T024004_adf3f759,gemini,26,Add losing anti-patterns section,False,0.6
+29,2026-03-13T02:41:27.568605+00:00,dev,0.53,0.860026,100,adf3f7598d7b9c12,autosearch/20260313T024056_adf3f759,gemini,27,Curiosity gap beats all other signals when in conflict,False,0.6
+30,2026-03-13T02:42:14.071512+00:00,dev,0.57,0.788504,100,adf3f7598d7b9c12,autosearch/20260313T024143_adf3f759,gemini,28,Add chain-of-thought (think step by step),False,0.6
+31,2026-03-13T02:43:05.122834+00:00,dev,0.55,0.765824,100,adf3f7598d7b9c12,autosearch/20260313T024233_adf3f759,gemini,29,Add shareability dimension to psychological pull,False,0.6
+32,2026-03-13T02:44:06.663031+00:00,dev,0.53,0.883697,100,adf3f7598d7b9c12,autosearch/20260313T024336_adf3f759,gemini,30,Ultra-focused: only curiosity gap and emotional pull,False,0.6
+33,2026-03-13T02:44:59.354250+00:00,dev,0.56,0.836026,100,adf3f7598d7b9c12,autosearch/20260313T024428_adf3f759,gemini,31,Remove tie-breaking rules (redundant with holistic instruction),False,0.6
+34,2026-03-13T02:45:57.262537+00:00,dev,0.55,0.826318,100,adf3f7598d7b9c12,autosearch/20260313T024526_adf3f759,gemini,32,Add narrative description of Upworthy's formula before signals,False,0.6
+35,2026-03-13T02:46:49.905429+00:00,dev,0.52,1.090531,100,adf3f7598d7b9c12,autosearch/20260313T024619_adf3f759,gemini,33,Increase confidence range to 0.60-0.95,False,0.6
+36,2026-03-13T02:47:32.293204+00:00,dev,0.54,0.697906,100,adf3f7598d7b9c12,autosearch/20260313T024701_adf3f759,gemini,34,Conservative confidence cap at 0.70,False,0.6
+37,2026-03-13T02:48:20.260043+00:00,dev,0.52,0.851459,100,adf3f7598d7b9c12,autosearch/20260313T024751_adf3f759,gemini,35,Remove loss aversion signal,False,0.6
+38,2026-03-13T02:49:08.459117+00:00,dev,0.54,0.81192,100,adf3f7598d7b9c12,autosearch/20260313T024839_adf3f759,gemini,36,Add expert editor quality benchmark to instructions,False,0.6
+39,2026-03-13T02:49:55.666126+00:00,dev,0.58,0.781638,100,adf3f7598d7b9c12,autosearch/20260313T024925_adf3f759,gemini,37,Strengthen personal relevance — emphasize you/your direct address,False,0.6
+40,2026-03-13T02:50:46.727264+00:00,dev,0.54,0.834167,100,adf3f7598d7b9c12,autosearch/20260313T025015_adf3f759,gemini,38,Personal relevance + curiosity gap combination bonus,False,0.6
+41,2026-03-13T02:51:44.534369+00:00,dev,0.56,0.755176,100,adf3f7598d7b9c12,autosearch/20260313T025114_adf3f759,gemini,39,Add real CTR analysis experience to role description,False,0.6
+42,2026-03-13T02:52:24.169817+00:00,dev,0.56,0.750149,100,adf3f7598d7b9c12,autosearch/20260313T025200_adf3f759,gemini,40,Remove Analysis requirement from output format,False,0.6
+43,2026-03-13T02:53:16.656112+00:00,dev,0.58,0.718812,100,adf3f7598d7b9c12,autosearch/20260313T025246_adf3f759,gemini,41,Micro-variation: scroll-stopping framing + net advantage,False,0.6
+44,2026-03-13T02:54:21.603905+00:00,dev,0.58,0.832727,100,adf3f7598d7b9c12,autosearch/20260313T025350_adf3f759,gemini,42,Combine: stronger personal relevance + scroll-stop framing,False,0.6
+45,2026-03-13T02:55:13.239886+00:00,dev,0.56,0.774473,100,adf3f7598d7b9c12,autosearch/20260313T025441_adf3f759,gemini,43,Reframe as tested variants rather than same-article alternates,False,0.6
+46,2026-03-13T02:56:00.275987+00:00,dev,0.54,0.774591,100,adf3f7598d7b9c12,autosearch/20260313T025530_adf3f759,gemini,44,Move surprise/reversal to #2 signal,False,0.6
+47,2026-03-13T02:56:48.455376+00:00,dev,0.57,0.75434,100,adf3f7598d7b9c12,autosearch/20260313T025619_adf3f759,gemini,45,Add urgency/importance dimension to psychological pull,False,0.6
+48,2026-03-13T02:57:32.794584+00:00,dev,0.53,0.726572,100,adf3f7598d7b9c12,autosearch/20260313T025701_adf3f759,gemini,46,"Remind model to predict real click behavior, not quality",False,0.6
+49,2026-03-13T02:58:21.864626+00:00,dev,0.55,0.749479,100,adf3f7598d7b9c12,autosearch/20260313T025750_adf3f759,gemini,47,Add active voice signal,False,0.6
+50,2026-03-13T02:59:09.452353+00:00,dev,0.58,0.755699,100,adf3f7598d7b9c12,autosearch/20260313T025838_adf3f759,gemini,48,"Update audience description to socially engaged, share-motivated",False,0.6
+51,2026-03-13T03:00:03.967641+00:00,dev,0.54,0.822517,100,adf3f7598d7b9c12,autosearch/20260313T025932_adf3f759,gemini,49,Combine share-motivated audience + scroll-stop instruction,False,0.6
+52,2026-03-13T03:00:59.058244+00:00,dev,0.57,0.819634,100,adf3f7598d7b9c12,autosearch/20260313T030025_adf3f759,gemini,50,Add revelation promise to curiosity gap + more key phrases,False,0.6
+53,2026-03-13T03:10:55.225217+00:00,dev,0.53,0.892271,100,adf3f7598d7b9c12,autosearch/20260313T031014_adf3f759,gemini,53,baseline run 1/5 — current prompt unchanged,False,0.6
+54,2026-03-13T03:11:40.906094+00:00,dev,0.57,0.80195,100,adf3f7598d7b9c12,autosearch/20260313T031059_adf3f759,gemini,54,baseline run 2/5 — current prompt unchanged,False,0.6
+55,2026-03-13T03:12:24.527547+00:00,dev,0.57,0.728721,100,adf3f7598d7b9c12,autosearch/20260313T031144_adf3f759,gemini,55,baseline run 3/5 — current prompt unchanged,False,0.6
+56,2026-03-13T03:13:10.809951+00:00,dev,0.55,0.773328,100,adf3f7598d7b9c12,autosearch/20260313T031228_adf3f759,gemini,56,baseline run 4/5 — current prompt unchanged,False,0.6
+57,2026-03-13T03:13:57.924305+00:00,dev,0.57,0.792444,100,adf3f7598d7b9c12,autosearch/20260313T031314_adf3f759,gemini,57,baseline run 5/5 — current prompt unchanged,False,0.6
+58,2026-03-13T03:14:56.916272+00:00,dev,0.54,0.827615,100,adf3f7598d7b9c12,autosearch/20260313T031412_adf3f759,gemini,58,remove tie-breaking rules section,False,0.6
+59,2026-03-13T03:15:55.758346+00:00,dev,0.56,0.799386,100,adf3f7598d7b9c12,autosearch/20260313T031513_adf3f759,gemini,59,curiosity gap only — remove all other signals,False,0.6
+60,2026-03-13T03:17:05.283795+00:00,dev,0.57,0.723675,100,adf3f7598d7b9c12,autosearch/20260313T031615_adf3f759,gemini,60,add shareability as signal #2,False,0.6
+61,2026-03-13T03:18:07.681532+00:00,dev,0.57,0.813573,100,adf3f7598d7b9c12,autosearch/20260313T031721_adf3f759,gemini,61,"reorder: emotional resonance first, curiosity gap second",False,0.6
+62,2026-03-13T03:19:03.825014+00:00,dev,0.56,0.78464,100,adf3f7598d7b9c12,autosearch/20260313T031821_adf3f759,gemini,62,add Upworthy formula: curiosity gap + emotional payoff,False,0.6
+63,2026-03-13T03:20:02.174253+00:00,dev,0.57,0.758091,100,adf3f7598d7b9c12,autosearch/20260313T031919_adf3f759,gemini,63,"remove role description, start directly with task",False,0.6
+64,2026-03-13T03:20:55.290584+00:00,dev,0.58,0.697765,100,adf3f7598d7b9c12,autosearch/20260313T032014_adf3f759,gemini,64,replace expert editor role with viral content researcher,False,0.6
+65,2026-03-13T03:21:50.240004+00:00,dev,0.56,0.78316,100,adf3f7598d7b9c12,autosearch/20260313T032111_adf3f759,gemini,65,"simplify instructions: remove analysis step prompt, just pick winner",False,0.6
+66,2026-03-13T03:22:45.914919+00:00,dev,0.6,0.677976,100,adf3f7598d7b9c12,autosearch/20260313T032205_adf3f759,gemini,66,imagine 100 readers voting on each headline,False,0.6
+67,2026-03-13T03:23:51.450779+00:00,dev,0.55,0.776296,100,adf3f7598d7b9c12,autosearch/20260313T032309_adf3f759,gemini,67,100 readers framing combined with signal scoring,False,0.6
+68,2026-03-13T03:24:49.975116+00:00,dev,0.57,0.775608,100,adf3f7598d7b9c12,autosearch/20260313T032408_adf3f759,gemini,68,rate each headline 1-10 before picking winner,False,0.6
+69,2026-03-13T03:25:49.146622+00:00,dev,0.56,0.767496,100,adf3f7598d7b9c12,autosearch/20260313T032507_adf3f759,gemini,69,"add tiebreaker: when in doubt, pick the more surprising headline",False,0.6
+70,2026-03-13T03:26:47.775561+00:00,dev,0.56,0.750975,100,adf3f7598d7b9c12,autosearch/20260313T032605_adf3f759,gemini,70,remove excerpt context — judge on headlines alone,False,0.6
+71,2026-03-13T03:27:44.009339+00:00,dev,0.59,0.818176,100,adf3f7598d7b9c12,autosearch/20260313T032702_adf3f759,gemini,71,minimal A/B test framing: which headline won the test?,False,0.6
+72,2026-03-13T03:28:49.241470+00:00,dev,0.6,0.742958,100,adf3f7598d7b9c12,autosearch/20260313T032804_adf3f759,gemini,72,add research-based Upworthy patterns before signal list,False,0.6
+73,2026-03-13T03:29:53.753341+00:00,dev,0.57,0.790208,100,adf3f7598d7b9c12,autosearch/20260313T032908_adf3f759,gemini,73,add concrete examples of winning vs losing headlines,False,0.6
+74,2026-03-13T03:30:52.129533+00:00,dev,0.56,0.789948,100,adf3f7598d7b9c12,autosearch/20260313T033009_adf3f759,gemini,74,instruction: use excerpt to find emotional core before evaluating headlines,False,0.6
+75,2026-03-13T03:31:50.914121+00:00,dev,0.6,0.819851,100,adf3f7598d7b9c12,autosearch/20260313T033108_adf3f759,gemini,75,reframe as A/B test prediction with cleaner ranked factors,False,0.6
+76,2026-03-13T03:32:51.220437+00:00,dev,0.56,0.802128,100,adf3f7598d7b9c12,autosearch/20260313T033209_adf3f759,gemini,76,add losing patterns section alongside winning patterns,False,0.6
+77,2026-03-13T03:33:59.996777+00:00,dev,0.58,0.698463,100,adf3f7598d7b9c12,autosearch/20260313T033319_adf3f759,gemini,77,combine: viral content researcher role + 100 readers framing,False,0.6
+78,2026-03-13T03:35:01.968933+00:00,dev,0.57,0.703451,100,adf3f7598d7b9c12,autosearch/20260313T033420_adf3f759,gemini,78,re-run best log_loss prompt: 100 readers framing,False,0.6
+79,2026-03-13T03:36:04.248576+00:00,dev,0.57,0.828353,100,adf3f7598d7b9c12,autosearch/20260313T033520_adf3f759,gemini,79,add explicit step-by-step thinking (chain-of-thought),False,0.6
+80,2026-03-13T03:37:05.653920+00:00,dev,0.55,0.788724,100,adf3f7598d7b9c12,autosearch/20260313T033624_adf3f759,gemini,80,"pure intuition: no signals, just expert judgment on A/B test result",False,0.6
+81,2026-03-13T03:38:16.247772+00:00,dev,0.57,0.739339,100,adf3f7598d7b9c12,autosearch/20260313T033736_adf3f759,gemini,81,add teaser technique explanation + must-click instruction,False,0.6
+82,2026-03-13T03:39:16.159391+00:00,dev,0.59,0.724966,100,adf3f7598d7b9c12,autosearch/20260313T033833_adf3f759,gemini,82,"narrow confidence range to 0.60-0.80, calibrated values",False,0.6
+83,2026-03-13T03:40:04.424973+00:00,dev,0.56,0.807511,100,adf3f7598d7b9c12,autosearch/20260313T033922_adf3f759,gemini,83,baseline repeat 83: current best prompt unchanged,False,0.6
+84,2026-03-13T03:40:53.539724+00:00,dev,0.57,0.766247,100,adf3f7598d7b9c12,autosearch/20260313T034008_adf3f759,gemini,84,baseline repeat 84: current best prompt unchanged,False,0.6
+85,2026-03-13T03:41:39.676486+00:00,dev,0.58,0.853157,100,adf3f7598d7b9c12,autosearch/20260313T034058_adf3f759,gemini,85,baseline repeat 85: current best prompt unchanged,False,0.6
+86,2026-03-13T03:42:23.458938+00:00,dev,0.56,0.716645,100,adf3f7598d7b9c12,autosearch/20260313T034144_adf3f759,gemini,86,baseline repeat 86: current best prompt unchanged,False,0.6
+87,2026-03-13T03:43:09.330478+00:00,dev,0.55,0.853944,100,adf3f7598d7b9c12,autosearch/20260313T034227_adf3f759,gemini,87,baseline repeat 87: current best prompt unchanged,False,0.6
+88,2026-03-13T03:44:10.671183+00:00,dev,0.57,0.717466,100,adf3f7598d7b9c12,autosearch/20260313T034329_adf3f759,gemini,88,change instructions: ask if YOU would click with no other context,False,0.6
+89,2026-03-13T03:45:18.360943+00:00,dev,0.6,0.703946,100,adf3f7598d7b9c12,autosearch/20260313T034431_adf3f759,gemini,89,increase analysis depth to 3-5 sentences with explicit structure,False,0.6
+90,2026-03-13T03:46:27.993771+00:00,dev,0.58,0.810699,100,adf3f7598d7b9c12,autosearch/20260313T034539_adf3f759,gemini,90,best combination: 100 readers + 3-5 sentence structured analysis,False,0.6
+91,2026-03-13T03:47:27.896821+00:00,dev,0.58,0.732246,100,adf3f7598d7b9c12,autosearch/20260313T034649_adf3f759,gemini,91,"identify the LOSER first, then declare winner",False,0.6
+92,2026-03-13T03:48:28.623162+00:00,dev,0.55,0.841292,100,adf3f7598d7b9c12,autosearch/20260313T034744_adf3f759,gemini,92,add over/undersell teaser balance instruction,False,0.6
+93,2026-03-13T03:49:28.343811+00:00,dev,0.58,0.773114,100,adf3f7598d7b9c12,autosearch/20260313T034846_adf3f759,gemini,93,add urgency/importance as signal #5,False,0.6
+94,2026-03-13T03:50:33.866085+00:00,dev,0.56,0.800657,100,adf3f7598d7b9c12,autosearch/20260313T034953_adf3f759,gemini,94,gut-check first: scroll-stop feeling as primary criterion,False,0.6
+95,2026-03-13T03:51:34.180743+00:00,dev,0.57,0.870712,100,adf3f7598d7b9c12,autosearch/20260313T035052_adf3f759,gemini,95,perfect Upworthy headline ideal: proximity scoring,False,0.6
+96,2026-03-13T03:52:34.740994+00:00,dev,0.57,0.692509,100,adf3f7598d7b9c12,autosearch/20260313T035151_adf3f759,gemini,96,calibrated confidence: 0.55/0.65/0.75/0.85 scale,False,0.6
+97,2026-03-13T03:53:28.461133+00:00,dev,0.55,0.732993,100,adf3f7598d7b9c12,autosearch/20260313T035251_adf3f759,gemini,97,structured scoring: curiosity/emotion/relevance 1-5 each,False,0.6
+98,2026-03-13T03:54:30.213154+00:00,dev,0.54,0.788652,100,adf3f7598d7b9c12,autosearch/20260313T035348_adf3f759,gemini,98,add reader profile + cause alignment as signal #4,False,0.6
+99,2026-03-13T03:55:28.376065+00:00,dev,0.59,0.725758,100,adf3f7598d7b9c12,autosearch/20260313T035450_adf3f759,gemini,99,"focus on differences between headlines, not similarities",False,0.6
+100,2026-03-13T03:56:26.034674+00:00,dev,0.56,0.742996,100,adf3f7598d7b9c12,autosearch/20260313T035548_adf3f759,gemini,100,final: 100 readers + focus on net difference between headlines,False,0.6

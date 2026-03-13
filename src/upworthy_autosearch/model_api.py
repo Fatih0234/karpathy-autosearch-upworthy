@@ -10,6 +10,7 @@ from __future__ import annotations
 
 import os
 import re
+import sys
 from typing import Callable
 
 # ---------------------------------------------------------------------------
@@ -17,6 +18,17 @@ from typing import Callable
 # ---------------------------------------------------------------------------
 
 PredictFn = Callable[[str, str, dict], tuple[int, float, str]]
+
+
+def _env_int(name: str, default: int) -> int:
+    raw = os.environ.get(name)
+    if raw is None:
+        return default
+    try:
+        value = int(raw)
+    except ValueError:
+        return default
+    return value if value > 0 else default
 
 
 # ---------------------------------------------------------------------------
@@ -139,13 +151,25 @@ def _get_gemini_client():
     """Return a thread-local Gemini client (initialised once per thread)."""
     import threading
     from google import genai
+    from google.genai import types
 
     local = getattr(_get_gemini_client, "_local", None)
     if local is None:
         _get_gemini_client._local = threading.local()
         local = _get_gemini_client._local
-    if not getattr(local, "client", None):
-        local.client = genai.Client(api_key=os.environ["GOOGLE_API_KEY"])
+
+    timeout_ms = _env_int("GEMINI_TIMEOUT_MS", 15000)
+    retry_attempts = _env_int("GEMINI_RETRY_ATTEMPTS", 2)
+    client_config = (timeout_ms, retry_attempts)
+    if getattr(local, "client_config", None) != client_config:
+        local.client = genai.Client(
+            api_key=os.environ["GOOGLE_API_KEY"],
+            http_options=types.HttpOptions(
+                timeout=timeout_ms,
+                retryOptions=types.HttpRetryOptions(attempts=retry_attempts),
+            ),
+        )
+        local.client_config = client_config
     return local.client
 
 
@@ -160,7 +184,15 @@ def gemini_predict(headline_a: str, headline_b: str, context: dict) -> tuple[int
         excerpt_a=context.get("excerpt_a", ""),
         excerpt_b=context.get("excerpt_b", ""),
     )
-    resp = client.models.generate_content(model=model, contents=prompt)
+    try:
+        resp = client.models.generate_content(model=model, contents=prompt)
+    except Exception as exc:
+        timeout_ms = _env_int("GEMINI_TIMEOUT_MS", 15000)
+        print(
+            f"[model_api] Gemini request failed after <= {timeout_ms}ms: {type(exc).__name__}: {exc}",
+            file=sys.stderr,
+        )
+        raise
     return _parse_llm_response(resp.text or "")
 
 

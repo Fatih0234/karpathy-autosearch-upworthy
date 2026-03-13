@@ -10,18 +10,17 @@ One iteration:
 from __future__ import annotations
 
 import argparse
+import os
 import subprocess
-import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
-from upworthy_autosearch.benchmark import best_dev_accuracy, best_dev_log_loss, evaluate
+from upworthy_autosearch.benchmark import evaluate
 from upworthy_autosearch.utils import (
-    EXPERIMENT_LOG,
-    ITERATION_FILE,
-    LEADERBOARD_MD,
     append_experiment_log,
+    get_best_dev_metrics,
     get_and_increment_iteration,
+    regenerate_analysis_artifacts,
     regenerate_leaderboard,
     strategy_hash,
 )
@@ -43,16 +42,17 @@ def run_search(key_change: str = "", rationale: str = "") -> None:
     ts = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%S")
     shash = strategy_hash()[:8]
     experiment_id = f"{ts}_{shash}"
-    branch = f"autosearch/{experiment_id}"
+    provider = os.environ.get("MODEL_PROVIDER", "heuristic")
+    workers = os.environ.get("EVAL_WORKERS", "1")
+    max_pairs = os.environ.get("EVAL_MAX_PAIRS", "all")
+    target_n_pairs = int(max_pairs) if str(max_pairs).isdigit() else None
+    current_branch = _git(["rev-parse", "--abbrev-ref", "HEAD"], check=False).stdout.strip() or "unknown"
 
     print(f"[search] Experiment: {experiment_id}")
-
-    # Create branch
-    _git(["checkout", "-b", branch], check=False)
+    print(f"[search] Branch={current_branch} Provider={provider} EVAL_MAX_PAIRS={max_pairs} EVAL_WORKERS={workers}")
 
     # Snapshot previous best
-    prev_best_acc = best_dev_accuracy()
-    prev_best_ll = best_dev_log_loss()
+    prev_best_acc, prev_best_ll = get_best_dev_metrics(provider=provider, n_pairs=target_n_pairs)
 
     # Get iteration number
     iteration = get_and_increment_iteration()
@@ -83,10 +83,11 @@ def run_search(key_change: str = "", rationale: str = "") -> None:
         verdict=verdict,
         rationale=rationale,
     )
+    regenerate_leaderboard()
+    regenerate_analysis_artifacts()
 
     if improved:
         print(f"[search] IMPROVED: {prev_best_acc:.4f} → {new_acc:.4f}")
-        regenerate_leaderboard()
         _git(
             [
                 "add",
@@ -95,6 +96,10 @@ def run_search(key_change: str = "", rationale: str = "") -> None:
                 "results/results.tsv",
                 "results/experiment_log.md",
                 "results/leaderboard.md",
+                "results/analysis_summary.md",
+                "results/metrics.csv",
+                "results/accuracy_over_time.svg",
+                "results/log_loss_over_time.svg",
                 "results/iteration.txt",
             ],
             check=False,
@@ -116,6 +121,11 @@ def run_search(key_change: str = "", rationale: str = "") -> None:
                 "add",
                 "results/results.tsv",
                 "results/experiment_log.md",
+                "results/leaderboard.md",
+                "results/analysis_summary.md",
+                "results/metrics.csv",
+                "results/accuracy_over_time.svg",
+                "results/log_loss_over_time.svg",
                 "results/iteration.txt",
             ],
             check=False,
@@ -124,10 +134,6 @@ def run_search(key_change: str = "", rationale: str = "") -> None:
             ["commit", "-m", f"autosearch: rejected iteration {iteration} [{experiment_id}]"],
             check=False,
         )
-
-    # Switch back to main/master
-    _git(["checkout", "main"], check=False)
-    _git(["checkout", "master"], check=False)
 
     print(f"VERDICT:{verdict}")
 

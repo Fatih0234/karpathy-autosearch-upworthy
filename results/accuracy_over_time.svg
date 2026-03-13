@@ -1,0 +1,127 @@
+<svg xmlns='http://www.w3.org/2000/svg' width='960' height='360' viewBox='0 0 960 360'>
+<rect width='100%' height='100%' fill='#ffffff' />
+<text x='64' y='28' font-size='20' font-family='Arial, sans-serif' fill='#0f172a'>Dev Accuracy by Run (gemini, 100 pairs)</text>
+<text x='936' y='28' text-anchor='end' font-size='12' font-family='Arial, sans-serif' fill='#475569'>Green dots mark new best accuracy</text>
+<line x1='64' y1='312.0' x2='936' y2='312.0' stroke='#e2e8f0' />
+<text x='54' y='316.0' text-anchor='end' font-size='12' fill='#475569'>0.490</text>
+<line x1='64' y1='246.0' x2='936' y2='246.0' stroke='#e2e8f0' />
+<text x='54' y='250.0' text-anchor='end' font-size='12' fill='#475569'>0.520</text>
+<line x1='64' y1='180.0' x2='936' y2='180.0' stroke='#e2e8f0' />
+<text x='54' y='184.0' text-anchor='end' font-size='12' fill='#475569'>0.550</text>
+<line x1='64' y1='114.0' x2='936' y2='114.0' stroke='#e2e8f0' />
+<text x='54' y='118.0' text-anchor='end' font-size='12' fill='#475569'>0.580</text>
+<line x1='64' y1='48.0' x2='936' y2='48.0' stroke='#e2e8f0' />
+<text x='54' y='52.0' text-anchor='end' font-size='12' fill='#475569'>0.610</text>
+<line x1='64' y1='312' x2='936' y2='312' stroke='#94a3b8' />
+<polyline fill='none' stroke='#2563eb' stroke-width='3' points='64.0,268.0 72.8,224.0 81.6,202.0 90.4,224.0 99.2,202.0 108.0,136.0 116.8,246.0 125.7,136.0 134.5,70.0 143.3,202.0 152.1,202.0 160.9,224.0 169.7,268.0 178.5,158.0 187.3,136.0 196.1,136.0 204.9,290.0 213.7,224.0 222.5,158.0 231.4,158.0 240.2,136.0 249.0,136.0 257.8,136.0 266.6,180.0 275.4,224.0 284.2,224.0 293.0,290.0 301.8,136.0 310.6,224.0 319.4,136.0 328.2,180.0 337.1,224.0 345.9,158.0 354.7,180.0 363.5,246.0 372.3,202.0 381.1,246.0 389.9,202.0 398.7,114.0 407.5,202.0 416.3,158.0 425.1,158.0 433.9,114.0 442.7,114.0 451.6,158.0 460.4,202.0 469.2,136.0 478.0,224.0 486.8,180.0 495.6,114.0 504.4,202.0 513.2,136.0 522.0,224.0 530.8,136.0 539.6,136.0 548.4,180.0 557.3,136.0 566.1,202.0 574.9,158.0 583.7,136.0 592.5,136.0 601.3,158.0 610.1,136.0 618.9,114.0 627.7,158.0 636.5,70.0 645.3,180.0 654.1,136.0 662.9,158.0 671.8,158.0 680.6,92.0 689.4,70.0 698.2,136.0 707.0,158.0 715.8,70.0 724.6,158.0 733.4,114.0 742.2,136.0 751.0,136.0 759.8,180.0 768.6,136.0 777.5,92.0 786.3,158.0 795.1,136.0 803.9,114.0 812.7,158.0 821.5,180.0 830.3,136.0 839.1,70.0 847.9,114.0 856.7,114.0 865.5,180.0 874.3,114.0 883.2,158.0 892.0,136.0 900.8,136.0 909.6,180.0 918.4,202.0 927.2,92.0 936.0,158.0' />
+<circle cx='64.0' cy='268.0' r='4' fill='#16803c' />
+<circle cx='72.8' cy='224.0' r='4' fill='#16803c' />
+<circle cx='81.6' cy='202.0' r='4' fill='#16803c' />
+<circle cx='90.4' cy='224.0' r='4' fill='#2563eb' />
+<circle cx='99.2' cy='202.0' r='4' fill='#2563eb' />
+<circle cx='108.0' cy='136.0' r='4' fill='#16803c' />
+<circle cx='116.8' cy='246.0' r='4' fill='#2563eb' />
+<circle cx='125.7' cy='136.0' r='4' fill='#2563eb' />
+<circle cx='134.5' cy='70.0' r='4' fill='#16803c' />
+<circle cx='143.3' cy='202.0' r='4' fill='#2563eb' />
+<circle cx='152.1' cy='202.0' r='4' fill='#2563eb' />
+<circle cx='160.9' cy='224.0' r='4' fill='#2563eb' />
+<circle cx='169.7' cy='268.0' r='4' fill='#2563eb' />
+<circle cx='178.5' cy='158.0' r='4' fill='#2563eb' />
+<circle cx='187.3' cy='136.0' r='4' fill='#2563eb' />
+<circle cx='196.1' cy='136.0' r='4' fill='#2563eb' />
+<circle cx='204.9' cy='290.0' r='4' fill='#2563eb' />
+<circle cx='213.7' cy='224.0' r='4' fill='#2563eb' />
+<circle cx='222.5' cy='158.0' r='4' fill='#2563eb' />
+<circle cx='231.4' cy='158.0' r='4' fill='#2563eb' />
+<circle cx='240.2' cy='136.0' r='4' fill='#2563eb' />
+<circle cx='249.0' cy='136.0' r='4' fill='#2563eb' />
+<circle cx='257.8' cy='136.0' r='4' fill='#2563eb' />
+<circle cx='266.6' cy='180.0' r='4' fill='#2563eb' />
+<circle cx='275.4' cy='224.0' r='4' fill='#2563eb' />
+<circle cx='284.2' cy='224.0' r='4' fill='#2563eb' />
+<circle cx='293.0' cy='290.0' r='4' fill='#2563eb' />
+<circle cx='301.8' cy='136.0' r='4' fill='#2563eb' />
+<circle cx='310.6' cy='224.0' r='4' fill='#2563eb' />
+<circle cx='319.4' cy='136.0' r='4' fill='#2563eb' />
+<circle cx='328.2' cy='180.0' r='4' fill='#2563eb' />
+<circle cx='337.1' cy='224.0' r='4' fill='#2563eb' />
+<circle cx='345.9' cy='158.0' r='4' fill='#2563eb' />
+<circle cx='354.7' cy='180.0' r='4' fill='#2563eb' />
+<circle cx='363.5' cy='246.0' r='4' fill='#2563eb' />
+<circle cx='372.3' cy='202.0' r='4' fill='#2563eb' />
+<circle cx='381.1' cy='246.0' r='4' fill='#2563eb' />
+<circle cx='389.9' cy='202.0' r='4' fill='#2563eb' />
+<circle cx='398.7' cy='114.0' r='4' fill='#2563eb' />
+<circle cx='407.5' cy='202.0' r='4' fill='#2563eb' />
+<circle cx='416.3' cy='158.0' r='4' fill='#2563eb' />
+<circle cx='425.1' cy='158.0' r='4' fill='#2563eb' />
+<circle cx='433.9' cy='114.0' r='4' fill='#2563eb' />
+<circle cx='442.7' cy='114.0' r='4' fill='#2563eb' />
+<circle cx='451.6' cy='158.0' r='4' fill='#2563eb' />
+<circle cx='460.4' cy='202.0' r='4' fill='#2563eb' />
+<circle cx='469.2' cy='136.0' r='4' fill='#2563eb' />
+<circle cx='478.0' cy='224.0' r='4' fill='#2563eb' />
+<circle cx='486.8' cy='180.0' r='4' fill='#2563eb' />
+<circle cx='495.6' cy='114.0' r='4' fill='#2563eb' />
+<circle cx='504.4' cy='202.0' r='4' fill='#2563eb' />
+<circle cx='513.2' cy='136.0' r='4' fill='#2563eb' />
+<circle cx='522.0' cy='224.0' r='4' fill='#2563eb' />
+<circle cx='530.8' cy='136.0' r='4' fill='#2563eb' />
+<circle cx='539.6' cy='136.0' r='4' fill='#2563eb' />
+<circle cx='548.4' cy='180.0' r='4' fill='#2563eb' />
+<circle cx='557.3' cy='136.0' r='4' fill='#2563eb' />
+<circle cx='566.1' cy='202.0' r='4' fill='#2563eb' />
+<circle cx='574.9' cy='158.0' r='4' fill='#2563eb' />
+<circle cx='583.7' cy='136.0' r='4' fill='#2563eb' />
+<circle cx='592.5' cy='136.0' r='4' fill='#2563eb' />
+<circle cx='601.3' cy='158.0' r='4' fill='#2563eb' />
+<circle cx='610.1' cy='136.0' r='4' fill='#2563eb' />
+<circle cx='618.9' cy='114.0' r='4' fill='#2563eb' />
+<circle cx='627.7' cy='158.0' r='4' fill='#2563eb' />
+<circle cx='636.5' cy='70.0' r='4' fill='#2563eb' />
+<circle cx='645.3' cy='180.0' r='4' fill='#2563eb' />
+<circle cx='654.1' cy='136.0' r='4' fill='#2563eb' />
+<circle cx='662.9' cy='158.0' r='4' fill='#2563eb' />
+<circle cx='671.8' cy='158.0' r='4' fill='#2563eb' />
+<circle cx='680.6' cy='92.0' r='4' fill='#2563eb' />
+<circle cx='689.4' cy='70.0' r='4' fill='#2563eb' />
+<circle cx='698.2' cy='136.0' r='4' fill='#2563eb' />
+<circle cx='707.0' cy='158.0' r='4' fill='#2563eb' />
+<circle cx='715.8' cy='70.0' r='4' fill='#2563eb' />
+<circle cx='724.6' cy='158.0' r='4' fill='#2563eb' />
+<circle cx='733.4' cy='114.0' r='4' fill='#2563eb' />
+<circle cx='742.2' cy='136.0' r='4' fill='#2563eb' />
+<circle cx='751.0' cy='136.0' r='4' fill='#2563eb' />
+<circle cx='759.8' cy='180.0' r='4' fill='#2563eb' />
+<circle cx='768.6' cy='136.0' r='4' fill='#2563eb' />
+<circle cx='777.5' cy='92.0' r='4' fill='#2563eb' />
+<circle cx='786.3' cy='158.0' r='4' fill='#2563eb' />
+<circle cx='795.1' cy='136.0' r='4' fill='#2563eb' />
+<circle cx='803.9' cy='114.0' r='4' fill='#2563eb' />
+<circle cx='812.7' cy='158.0' r='4' fill='#2563eb' />
+<circle cx='821.5' cy='180.0' r='4' fill='#2563eb' />
+<circle cx='830.3' cy='136.0' r='4' fill='#2563eb' />
+<circle cx='839.1' cy='70.0' r='4' fill='#2563eb' />
+<circle cx='847.9' cy='114.0' r='4' fill='#2563eb' />
+<circle cx='856.7' cy='114.0' r='4' fill='#2563eb' />
+<circle cx='865.5' cy='180.0' r='4' fill='#2563eb' />
+<circle cx='874.3' cy='114.0' r='4' fill='#2563eb' />
+<circle cx='883.2' cy='158.0' r='4' fill='#2563eb' />
+<circle cx='892.0' cy='136.0' r='4' fill='#2563eb' />
+<circle cx='900.8' cy='136.0' r='4' fill='#2563eb' />
+<circle cx='909.6' cy='180.0' r='4' fill='#2563eb' />
+<circle cx='918.4' cy='202.0' r='4' fill='#2563eb' />
+<circle cx='927.2' cy='92.0' r='4' fill='#2563eb' />
+<circle cx='936.0' cy='158.0' r='4' fill='#2563eb' />
+<text x='64.0' y='342' text-anchor='middle' font-size='12' fill='#475569'>1</text>
+<text x='169.7' y='342' text-anchor='middle' font-size='12' fill='#475569'>13</text>
+<text x='275.4' y='342' text-anchor='middle' font-size='12' fill='#475569'>25</text>
+<text x='381.1' y='342' text-anchor='middle' font-size='12' fill='#475569'>37</text>
+<text x='486.8' y='342' text-anchor='middle' font-size='12' fill='#475569'>49</text>
+<text x='592.5' y='342' text-anchor='middle' font-size='12' fill='#475569'>61</text>
+<text x='698.2' y='342' text-anchor='middle' font-size='12' fill='#475569'>73</text>
+<text x='803.9' y='342' text-anchor='middle' font-size='12' fill='#475569'>85</text>
+<text x='909.6' y='342' text-anchor='middle' font-size='12' fill='#475569'>97</text>
+<text x='480.0' y='356' text-anchor='middle' font-size='12' fill='#475569'>Run sequence</text>
+</svg>

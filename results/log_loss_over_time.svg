@@ -1,0 +1,127 @@
+<svg xmlns='http://www.w3.org/2000/svg' width='960' height='360' viewBox='0 0 960 360'>
+<rect width='100%' height='100%' fill='#ffffff' />
+<text x='64' y='28' font-size='20' font-family='Arial, sans-serif' fill='#0f172a'>Dev Log Loss by Run (gemini, 100 pairs)</text>
+<text x='936' y='28' text-anchor='end' font-size='12' font-family='Arial, sans-serif' fill='#475569'>Green dots mark new best accuracy</text>
+<line x1='64' y1='312.0' x2='936' y2='312.0' stroke='#e2e8f0' />
+<text x='54' y='316.0' text-anchor='end' font-size='12' fill='#475569'>0.609</text>
+<line x1='64' y1='246.0' x2='936' y2='246.0' stroke='#e2e8f0' />
+<text x='54' y='250.0' text-anchor='end' font-size='12' fill='#475569'>0.779</text>
+<line x1='64' y1='180.0' x2='936' y2='180.0' stroke='#e2e8f0' />
+<text x='54' y='184.0' text-anchor='end' font-size='12' fill='#475569'>0.948</text>
+<line x1='64' y1='114.0' x2='936' y2='114.0' stroke='#e2e8f0' />
+<text x='54' y='118.0' text-anchor='end' font-size='12' fill='#475569'>1.118</text>
+<line x1='64' y1='48.0' x2='936' y2='48.0' stroke='#e2e8f0' />
+<text x='54' y='52.0' text-anchor='end' font-size='12' fill='#475569'>1.287</text>
+<line x1='64' y1='312' x2='936' y2='312' stroke='#94a3b8' />
+<polyline fill='none' stroke='#dc2626' stroke-width='3' points='64.0,227.2 72.8,237.8 81.6,261.4 90.4,227.0 99.2,229.5 108.0,259.9 116.8,217.9 125.7,252.5 134.5,267.7 143.3,246.8 152.1,227.7 160.9,234.4 169.7,176.3 178.5,245.2 187.3,249.2 196.1,239.3 204.9,70.0 213.7,231.7 222.5,290.0 231.4,238.6 240.2,258.3 249.0,272.6 257.8,267.9 266.6,275.9 275.4,212.7 284.2,228.0 293.0,210.8 301.8,234.5 310.6,214.3 319.4,242.2 328.2,251.0 337.1,205.1 345.9,223.7 354.7,227.5 363.5,124.6 372.3,277.5 381.1,217.7 389.9,233.1 398.7,244.9 407.5,224.4 416.3,255.2 425.1,257.1 433.9,269.3 442.7,225.0 451.6,247.7 460.4,247.6 469.2,255.5 478.0,266.3 486.8,257.4 495.6,255.0 504.4,229.0 513.2,230.1 522.0,201.8 530.8,237.0 539.6,265.5 548.4,248.1 557.3,240.7 566.1,227.0 574.9,238.0 583.7,267.4 592.5,232.4 601.3,243.7 610.1,254.0 618.9,277.5 627.7,244.3 636.5,285.2 645.3,247.0 654.1,247.2 662.9,250.4 671.8,256.8 680.6,230.6 689.4,259.9 698.2,241.5 707.0,241.6 715.8,230.0 724.6,236.9 733.4,277.3 742.2,275.3 751.0,226.7 759.8,242.1 768.6,261.3 777.5,266.9 786.3,234.8 795.1,250.9 803.9,217.0 812.7,270.2 821.5,216.7 830.3,269.9 839.1,275.1 847.9,233.6 856.7,264.1 865.5,221.6 874.3,248.2 883.2,237.5 892.0,210.2 900.8,279.6 909.6,263.8 918.4,242.1 927.2,266.6 936.0,259.9' />
+<circle cx='64.0' cy='227.2' r='4' fill='#16803c' />
+<circle cx='72.8' cy='237.8' r='4' fill='#16803c' />
+<circle cx='81.6' cy='261.4' r='4' fill='#16803c' />
+<circle cx='90.4' cy='227.0' r='4' fill='#dc2626' />
+<circle cx='99.2' cy='229.5' r='4' fill='#dc2626' />
+<circle cx='108.0' cy='259.9' r='4' fill='#16803c' />
+<circle cx='116.8' cy='217.9' r='4' fill='#dc2626' />
+<circle cx='125.7' cy='252.5' r='4' fill='#dc2626' />
+<circle cx='134.5' cy='267.7' r='4' fill='#16803c' />
+<circle cx='143.3' cy='246.8' r='4' fill='#dc2626' />
+<circle cx='152.1' cy='227.7' r='4' fill='#dc2626' />
+<circle cx='160.9' cy='234.4' r='4' fill='#dc2626' />
+<circle cx='169.7' cy='176.3' r='4' fill='#dc2626' />
+<circle cx='178.5' cy='245.2' r='4' fill='#dc2626' />
+<circle cx='187.3' cy='249.2' r='4' fill='#dc2626' />
+<circle cx='196.1' cy='239.3' r='4' fill='#dc2626' />
+<circle cx='204.9' cy='70.0' r='4' fill='#dc2626' />
+<circle cx='213.7' cy='231.7' r='4' fill='#dc2626' />
+<circle cx='222.5' cy='290.0' r='4' fill='#dc2626' />
+<circle cx='231.4' cy='238.6' r='4' fill='#dc2626' />
+<circle cx='240.2' cy='258.3' r='4' fill='#dc2626' />
+<circle cx='249.0' cy='272.6' r='4' fill='#dc2626' />
+<circle cx='257.8' cy='267.9' r='4' fill='#dc2626' />
+<circle cx='266.6' cy='275.9' r='4' fill='#dc2626' />
+<circle cx='275.4' cy='212.7' r='4' fill='#dc2626' />
+<circle cx='284.2' cy='228.0' r='4' fill='#dc2626' />
+<circle cx='293.0' cy='210.8' r='4' fill='#dc2626' />
+<circle cx='301.8' cy='234.5' r='4' fill='#dc2626' />
+<circle cx='310.6' cy='214.3' r='4' fill='#dc2626' />
+<circle cx='319.4' cy='242.2' r='4' fill='#dc2626' />
+<circle cx='328.2' cy='251.0' r='4' fill='#dc2626' />
+<circle cx='337.1' cy='205.1' r='4' fill='#dc2626' />
+<circle cx='345.9' cy='223.7' r='4' fill='#dc2626' />
+<circle cx='354.7' cy='227.5' r='4' fill='#dc2626' />
+<circle cx='363.5' cy='124.6' r='4' fill='#dc2626' />
+<circle cx='372.3' cy='277.5' r='4' fill='#dc2626' />
+<circle cx='381.1' cy='217.7' r='4' fill='#dc2626' />
+<circle cx='389.9' cy='233.1' r='4' fill='#dc2626' />
+<circle cx='398.7' cy='244.9' r='4' fill='#dc2626' />
+<circle cx='407.5' cy='224.4' r='4' fill='#dc2626' />
+<circle cx='416.3' cy='255.2' r='4' fill='#dc2626' />
+<circle cx='425.1' cy='257.1' r='4' fill='#dc2626' />
+<circle cx='433.9' cy='269.3' r='4' fill='#dc2626' />
+<circle cx='442.7' cy='225.0' r='4' fill='#dc2626' />
+<circle cx='451.6' cy='247.7' r='4' fill='#dc2626' />
+<circle cx='460.4' cy='247.6' r='4' fill='#dc2626' />
+<circle cx='469.2' cy='255.5' r='4' fill='#dc2626' />
+<circle cx='478.0' cy='266.3' r='4' fill='#dc2626' />
+<circle cx='486.8' cy='257.4' r='4' fill='#dc2626' />
+<circle cx='495.6' cy='255.0' r='4' fill='#dc2626' />
+<circle cx='504.4' cy='229.0' r='4' fill='#dc2626' />
+<circle cx='513.2' cy='230.1' r='4' fill='#dc2626' />
+<circle cx='522.0' cy='201.8' r='4' fill='#dc2626' />
+<circle cx='530.8' cy='237.0' r='4' fill='#dc2626' />
+<circle cx='539.6' cy='265.5' r='4' fill='#dc2626' />
+<circle cx='548.4' cy='248.1' r='4' fill='#dc2626' />
+<circle cx='557.3' cy='240.7' r='4' fill='#dc2626' />
+<circle cx='566.1' cy='227.0' r='4' fill='#dc2626' />
+<circle cx='574.9' cy='238.0' r='4' fill='#dc2626' />
+<circle cx='583.7' cy='267.4' r='4' fill='#dc2626' />
+<circle cx='592.5' cy='232.4' r='4' fill='#dc2626' />
+<circle cx='601.3' cy='243.7' r='4' fill='#dc2626' />
+<circle cx='610.1' cy='254.0' r='4' fill='#dc2626' />
+<circle cx='618.9' cy='277.5' r='4' fill='#dc2626' />
+<circle cx='627.7' cy='244.3' r='4' fill='#dc2626' />
+<circle cx='636.5' cy='285.2' r='4' fill='#dc2626' />
+<circle cx='645.3' cy='247.0' r='4' fill='#dc2626' />
+<circle cx='654.1' cy='247.2' r='4' fill='#dc2626' />
+<circle cx='662.9' cy='250.4' r='4' fill='#dc2626' />
+<circle cx='671.8' cy='256.8' r='4' fill='#dc2626' />
+<circle cx='680.6' cy='230.6' r='4' fill='#dc2626' />
+<circle cx='689.4' cy='259.9' r='4' fill='#dc2626' />
+<circle cx='698.2' cy='241.5' r='4' fill='#dc2626' />
+<circle cx='707.0' cy='241.6' r='4' fill='#dc2626' />
+<circle cx='715.8' cy='230.0' r='4' fill='#dc2626' />
+<circle cx='724.6' cy='236.9' r='4' fill='#dc2626' />
+<circle cx='733.4' cy='277.3' r='4' fill='#dc2626' />
+<circle cx='742.2' cy='275.3' r='4' fill='#dc2626' />
+<circle cx='751.0' cy='226.7' r='4' fill='#dc2626' />
+<circle cx='759.8' cy='242.1' r='4' fill='#dc2626' />
+<circle cx='768.6' cy='261.3' r='4' fill='#dc2626' />
+<circle cx='777.5' cy='266.9' r='4' fill='#dc2626' />
+<circle cx='786.3' cy='234.8' r='4' fill='#dc2626' />
+<circle cx='795.1' cy='250.9' r='4' fill='#dc2626' />
+<circle cx='803.9' cy='217.0' r='4' fill='#dc2626' />
+<circle cx='812.7' cy='270.2' r='4' fill='#dc2626' />
+<circle cx='821.5' cy='216.7' r='4' fill='#dc2626' />
+<circle cx='830.3' cy='269.9' r='4' fill='#dc2626' />
+<circle cx='839.1' cy='275.1' r='4' fill='#dc2626' />
+<circle cx='847.9' cy='233.6' r='4' fill='#dc2626' />
+<circle cx='856.7' cy='264.1' r='4' fill='#dc2626' />
+<circle cx='865.5' cy='221.6' r='4' fill='#dc2626' />
+<circle cx='874.3' cy='248.2' r='4' fill='#dc2626' />
+<circle cx='883.2' cy='237.5' r='4' fill='#dc2626' />
+<circle cx='892.0' cy='210.2' r='4' fill='#dc2626' />
+<circle cx='900.8' cy='279.6' r='4' fill='#dc2626' />
+<circle cx='909.6' cy='263.8' r='4' fill='#dc2626' />
+<circle cx='918.4' cy='242.1' r='4' fill='#dc2626' />
+<circle cx='927.2' cy='266.6' r='4' fill='#dc2626' />
+<circle cx='936.0' cy='259.9' r='4' fill='#dc2626' />
+<text x='64.0' y='342' text-anchor='middle' font-size='12' fill='#475569'>1</text>
+<text x='169.7' y='342' text-anchor='middle' font-size='12' fill='#475569'>13</text>
+<text x='275.4' y='342' text-anchor='middle' font-size='12' fill='#475569'>25</text>
+<text x='381.1' y='342' text-anchor='middle' font-size='12' fill='#475569'>37</text>
+<text x='486.8' y='342' text-anchor='middle' font-size='12' fill='#475569'>49</text>
+<text x='592.5' y='342' text-anchor='middle' font-size='12' fill='#475569'>61</text>
+<text x='698.2' y='342' text-anchor='middle' font-size='12' fill='#475569'>73</text>
+<text x='803.9' y='342' text-anchor='middle' font-size='12' fill='#475569'>85</text>
+<text x='909.6' y='342' text-anchor='middle' font-size='12' fill='#475569'>97</text>
+<text x='480.0' y='356' text-anchor='middle' font-size='12' fill='#475569'>Run sequence</text>
+</svg>
