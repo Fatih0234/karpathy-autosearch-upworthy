@@ -5,10 +5,11 @@ Given two headlines for the same article, decide which is more likely to perform
 **Scoring signals (in order of importance):**
 1. **Curiosity gap** — implies surprising or withheld information: "secret", "revealed", "real reason", "what really happened", "you didn't know"
 2. **Emotional resonance** — strong emotional words: "devastating", "inspiring", "shocking", "beautiful", "heartbreaking", "outrage"
-3. **Specificity & numbers** — concrete numbers ("7 ways", "3 reasons", years, statistics) beat vague language
-4. **Question format** — questions that imply a surprising answer engage readers
-5. **Optimal length** — 60–100 characters is the sweet spot; too short = vague, too long = overwhelming
-6. **List format** — "N things/ways/reasons" headlines feel scannable; 5, 7, 10 are especially strong
+3. **Personal relevance** — "you/your" language, identity appeals ("as a parent", "if you care about X"), first/second person framing
+4. **Surprise/reversal** — unexpected twist implied ("but then", "actually", "turns out", "not what you think")
+5. **Specificity & numbers** — concrete numbers ("7 ways", "3 reasons", years, statistics) beat vague language
+6. **Question format** — questions that imply a surprising answer engage readers
+7. **Optimal length** — 60–100 characters is the sweet spot; too short = vague, too long = overwhelming
 
 **Tie-breaking rules:**
 - Stronger emotional word wins

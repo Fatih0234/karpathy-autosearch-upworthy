@@ -30,3 +30,18 @@
 
 ---
 
+## Iteration 3 — ✅ IMPROVED
+
+| Field | Value |
+|---|---|
+| experiment_id | `20260313T004208_adf3f759` |
+| strategy_hash | `adf3f7598d7b9c12` |
+| timestamp | 2026-03-13 00:42 UTC |
+| key_change | add personal-relevance and surprise/reversal signals (Upworthy-specific) |
+| accuracy | 0.0000 → 0.5400 |
+| log_loss | inf → 0.7391 |
+
+**Rationale:** Upworthy content is famous for "you/your" framing and unexpected reversals; these are high-CTR signals not yet in the prompt.
+
+---
+
