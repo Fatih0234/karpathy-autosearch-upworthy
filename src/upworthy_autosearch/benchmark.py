@@ -10,6 +10,7 @@ import csv
 import hashlib
 import os
 import sys
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -55,27 +56,50 @@ def evaluate(split: str = "dev", notes: str = "", iteration: int = 0, key_change
         )
 
     df = pd.read_parquet(parquet)
-    predict = get_predictor()
 
+    # Optional sampling for fast LLM evaluation (set EVAL_MAX_PAIRS env var)
+    max_pairs = os.environ.get("EVAL_MAX_PAIRS")
+    if max_pairs:
+        max_pairs = int(max_pairs)
+        if max_pairs < len(df):
+            df = df.sample(n=max_pairs, random_state=42).reset_index(drop=True)
+            print(f"[benchmark] Sampled {max_pairs} pairs from {split} split")
+
+    predict = get_predictor()
+    n_workers = int(os.environ.get("EVAL_WORKERS", "1"))
+
+    def _predict_row(row):
+        winner, confidence, _ = predict(
+            headline_a=row.headline_a,
+            headline_b=row.headline_b,
+            context={
+                "excerpt_a": row.excerpt_a,
+                "excerpt_b": row.excerpt_b,
+                "eyecatcher_same": row.eyecatcher_same,
+            },
+        )
+        label = int(row.label)
+        p1 = confidence if winner == 1 else (1 - confidence)
+        return label, int(winner), float(np.clip(p1, 1e-7, 1 - 1e-7))
+
+    rows = list(df.itertuples(index=False))
     labels = []
     preds = []
     probs = []
 
-    for _, row in df.iterrows():
-        winner, confidence, _ = predict(
-            headline_a=row["headline_a"],
-            headline_b=row["headline_b"],
-            context={
-                "excerpt_a": row["excerpt_a"],
-                "excerpt_b": row["excerpt_b"],
-                "eyecatcher_same": row["eyecatcher_same"],
-            },
-        )
-        labels.append(int(row["label"]))
-        preds.append(int(winner))
-        # Confidence as probability for label=1
-        p1 = confidence if winner == 1 else (1 - confidence)
-        probs.append(np.clip(p1, 1e-7, 1 - 1e-7))
+    if n_workers > 1:
+        with ThreadPoolExecutor(max_workers=n_workers) as pool:
+            futures = {pool.submit(_predict_row, r): i for i, r in enumerate(rows)}
+            results_map = {}
+            for fut in as_completed(futures):
+                results_map[futures[fut]] = fut.result()
+        for i in range(len(rows)):
+            label, pred, prob = results_map[i]
+            labels.append(label); preds.append(pred); probs.append(prob)
+    else:
+        for row in rows:
+            label, pred, prob = _predict_row(row)
+            labels.append(label); preds.append(pred); probs.append(prob)
 
     acc = accuracy_score(labels, preds)
     ll = log_loss(labels, probs, labels=[0, 1])

@@ -6,8 +6,10 @@ N=${1:-5}
 set -a; source "$REPO_ROOT/.env"; set +a
 export MODEL_PROVIDER=gemini
 export GEMINI_MODEL="${GEMINI_MODEL:-gemini-2.5-flash-lite}"
+export EVAL_MAX_PAIRS="${EVAL_MAX_PAIRS:-100}"
+export EVAL_WORKERS="${EVAL_WORKERS:-10}"
 
-echo "[agent] Starting $N iterations with $GEMINI_MODEL"
+echo "[agent] Starting $N iterations with $GEMINI_MODEL (${EVAL_MAX_PAIRS} pairs, ${EVAL_WORKERS} workers)"
 
 for i in $(seq 1 "$N"); do
     echo "=== Agent Iteration $i / $N ==="
@@ -28,7 +30,7 @@ $(tail -n 60 "$REPO_ROOT/results/experiment_log.md" 2>/dev/null || echo '(none y
 3. Run: uv run python -m upworthy_autosearch.search --key-change '<1-line summary>' --rationale '<1-2 sentence why>'
 4. Report the VERDICT line from output"
 
-    claude --print "$PROMPT"
+    claude --print --permission-mode bypassPermissions "$PROMPT"
     echo "[agent] Iteration $i complete."
 done
 
