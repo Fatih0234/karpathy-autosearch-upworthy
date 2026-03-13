@@ -15,3 +15,18 @@
 
 ---
 
+## Iteration 2 — ✅ IMPROVED
+
+| Field | Value |
+|---|---|
+| experiment_id | `20260313T004120_adf3f759` |
+| strategy_hash | `adf3f7598d7b9c12` |
+| timestamp | 2026-03-13 00:41 UTC |
+| key_change | add chain-of-thought analysis step + confidence calibration guidance |
+| accuracy | 0.0000 → 0.5300 |
+| log_loss | inf → 0.7998 |
+
+**Rationale:** Log_loss was 0.827 (worse than random), suggesting overconfidence in wrong answers; forcing explicit per-signal analysis and a 0.55-0.90 confidence range should reduce miscalibration.
+
+---
+

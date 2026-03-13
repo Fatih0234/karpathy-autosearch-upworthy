@@ -25,7 +25,10 @@ Excerpt: {excerpt_b}
 
 **Headline B:** {headline_b}
 
+**Instructions:** Before deciding, briefly score each signal for A vs B (which is stronger, or tie). Then sum up and pick the winner. Use confidence 0.55 if it's close, up to 0.90 if one is clearly dominant.
+
 Respond in exactly this format:
+Analysis: [1-3 sentences scoring the key signals for A vs B]
 Winner: A
 Confidence: 0.75
 Rationale: Brief explanation (1-2 sentences) of why that headline wins.
