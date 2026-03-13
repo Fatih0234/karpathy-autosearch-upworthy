@@ -13,7 +13,7 @@ echo "[agent] Starting $N iterations with $GEMINI_MODEL (${EVAL_MAX_PAIRS} pairs
 
 for i in $(seq 1 "$N"); do
     echo "=== Agent Iteration $i / $N ==="
-    PROMPT_FILE="$(mktemp /tmp/autosearch_prompt_XXXXXX.md)"
+    PROMPT_FILE="$(mktemp -t autosearch_prompt)"
     cat > "$PROMPT_FILE" <<PROMPT_EOF
 $(cat "$REPO_ROOT/program.md")
 
