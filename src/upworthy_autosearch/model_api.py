@@ -135,19 +135,32 @@ def openai_predict(headline_a: str, headline_b: str, context: dict) -> tuple[int
     return _parse_llm_response(resp.choices[0].message.content or "")
 
 
+def _get_gemini_client():
+    """Return a thread-local Gemini client (initialised once per thread)."""
+    import threading
+    from google import genai
+
+    local = getattr(_get_gemini_client, "_local", None)
+    if local is None:
+        _get_gemini_client._local = threading.local()
+        local = _get_gemini_client._local
+    if not getattr(local, "client", None):
+        local.client = genai.Client(api_key=os.environ["GOOGLE_API_KEY"])
+    return local.client
+
+
 def gemini_predict(headline_a: str, headline_b: str, context: dict) -> tuple[int, float, str]:
-    import google.generativeai as genai
     from upworthy_autosearch.prompts import render_pairwise_judge
 
-    genai.configure(api_key=os.environ["GOOGLE_API_KEY"])
-    model = genai.GenerativeModel(os.environ.get("GEMINI_MODEL", "gemini-1.5-flash"))
+    client = _get_gemini_client()
+    model = os.environ.get("GEMINI_MODEL", "gemini-2.5-flash-lite")
     prompt = render_pairwise_judge(
         headline_a=headline_a,
         headline_b=headline_b,
         excerpt_a=context.get("excerpt_a", ""),
         excerpt_b=context.get("excerpt_b", ""),
     )
-    resp = model.generate_content(prompt)
+    resp = client.models.generate_content(model=model, contents=prompt)
     return _parse_llm_response(resp.text or "")
 
 

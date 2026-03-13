@@ -2,7 +2,18 @@
 name = "upworthy-autosearch"
 version = "0.1.0"
 requires-python = ">=3.11"
-dependencies = ["pandas", "scikit-learn", "requests", "openai", "google-generativeai", "tqdm", "numpy", "pyarrow", "jinja2"]
+dependencies = [
+    "pandas",
+    "scikit-learn",
+    "requests",
+    "openai",
+    "google-generativeai",
+    "tqdm",
+    "numpy",
+    "pyarrow",
+    "jinja2",
+    "google-genai>=1.67.0",
+]
 
 [project.optional-dependencies]
 dev = ["pytest", "pytest-cov"]
