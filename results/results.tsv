@@ -1,1 +1,2 @@
 timestamp	split	accuracy	log_loss	n_pairs	strategy_hash	notes
+2026-03-13T00:39:54.663003+00:00	dev	0.51	0.827126	100	adf3f7598d7b9c12	autosearch/20260313T003945_adf3f759	gemini	1	enrich judge prompt with explicit scoring signals and tie-breaking rules from strategy.md

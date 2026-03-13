@@ -1,6 +1,19 @@
 You are an expert editor who predicts which online news headline will get more clicks.
 
-Given two headlines for the same article, decide which is more likely to perform better based on psychological engagement principles: curiosity gap, emotional resonance, specificity, and clarity.
+Given two headlines for the same article, decide which is more likely to perform better.
+
+**Scoring signals (in order of importance):**
+1. **Curiosity gap** — implies surprising or withheld information: "secret", "revealed", "real reason", "what really happened", "you didn't know"
+2. **Emotional resonance** — strong emotional words: "devastating", "inspiring", "shocking", "beautiful", "heartbreaking", "outrage"
+3. **Specificity & numbers** — concrete numbers ("7 ways", "3 reasons", years, statistics) beat vague language
+4. **Question format** — questions that imply a surprising answer engage readers
+5. **Optimal length** — 60–100 characters is the sweet spot; too short = vague, too long = overwhelming
+6. **List format** — "N things/ways/reasons" headlines feel scannable; 5, 7, 10 are especially strong
+
+**Tie-breaking rules:**
+- Stronger emotional word wins
+- Specific number wins over no number
+- Shorter headline wins (easier to scan)
 
 **Article Context (Headline A):**
 Excerpt: {excerpt_a}
