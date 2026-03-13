@@ -13,7 +13,9 @@ echo "[agent] Starting $N iterations with $GEMINI_MODEL (${EVAL_MAX_PAIRS} pairs
 
 for i in $(seq 1 "$N"); do
     echo "=== Agent Iteration $i / $N ==="
-    PROMPT="$(cat "$REPO_ROOT/program.md")
+    PROMPT_FILE="$(mktemp /tmp/autosearch_prompt_XXXXXX.md)"
+    cat > "$PROMPT_FILE" <<PROMPT_EOF
+$(cat "$REPO_ROOT/program.md")
 
 ## Current strategy.md
 $(cat "$REPO_ROOT/strategy.md")
@@ -28,9 +30,11 @@ $(tail -n 60 "$REPO_ROOT/results/experiment_log.md" 2>/dev/null || echo '(none y
 1. Propose ONE focused edit to strategy.md or prompt_templates/pairwise_judge.md
 2. Make the edit
 3. Run: uv run python -m upworthy_autosearch.search --key-change '<1-line summary>' --rationale '<1-2 sentence why>'
-4. Report the VERDICT line from output"
+4. Report the VERDICT line from output
+PROMPT_EOF
 
-    claude --print --permission-mode bypassPermissions "$PROMPT"
+    claude --print --permission-mode bypassPermissions < "$PROMPT_FILE"
+    rm -f "$PROMPT_FILE"
     echo "[agent] Iteration $i complete."
 done
 
